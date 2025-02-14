@@ -1,0 +1,91 @@
+ .quiz_game_MotherBox {
+    min-height: 100vh;
+    background-image:url("../../../../public/Game/Quiz/quiz_img/quizpng2.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+/*Quizgame Okuse coin and backspace */
+  .quiz_game_box1{
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding-top: 1rem;
+  }
+
+/*  */
+
+
+.quizgame_description_box {
+  position: relative;
+  width: 100%;
+  max-width: 400px; /* Adjust as per your container size */
+  margin: 0 auto;
+}
+
+.level_image {
+  width: 100%;
+  height: auto;
+  border-radius: 10px; /* Optional, for rounded corners */
+}
+
+.quizgame_description_overlay {
+  position: absolute;
+  top: 55%; /* Center vertically */
+  left: 50%; /* Center horizontally */
+  transform: translate(-50%, -50%);
+  /* background-color: rgba(0, 0, 0, 6);  */
+  color: #e0e0e0; /* White text */
+  padding: 1rem;
+  border-radius: 10px; /* Optional, for rounded corners */
+  text-align: center; /* Center text */
+  width: 80%; /* Adjust to control the width of the overlay */
+}
+
+
+
+/*  */
+.quiz_level_buttons {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.level_button {
+  margin: 0.5rem 0.5rem;
+  padding: 0.5rem 1rem;
+  max-width: 400px;
+  width: 100%;
+  background-color: #ffffff;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.level_button.active {
+  background-color: #007bff;
+  color: #ffffff;
+  border-color: #007bff;
+}
+
+.level_button:hover {
+  background-color: #ff0000;
+}
+
+/*  */
+.quizlevel_enter{
+  margin-top:1rem;
+  max-width: 400px;
+  width: 100%;
+  padding-bottom: 2rem;
+}
+
+.quizlevel_enter img {
+  max-height: 80px;
+  height: 100%;
+  width: 100%;
+  border-radius: 10px; 
+}

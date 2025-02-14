@@ -1,0 +1,29 @@
+.SignIn-main{
+    width: 100%;
+    min-height: 100vh;
+    background-image:url("./regi_img/loginbg.png");
+    background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.signIn-container{
+width:500px;
+padding: 20px;
+background-color:#49494979;
+backdrop-filter: blur(8px);
+-webkit-backdrop-filter: blur(8px);
+display: flex;
+text-align: center;
+justify-content: center;
+flex-direction: column;
+border-radius: 20px;
+}
+
+.Login_title{
+    margin-bottom: 2rem;
+      }

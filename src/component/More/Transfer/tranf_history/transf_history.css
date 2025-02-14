@@ -1,0 +1,44 @@
+.Mother_transferHistory_box ul{
+    list-style: none;
+    max-width: 600px;
+    margin: 2rem auto 0;
+    padding: 0;
+}
+.Mother_transferHistory_box ul li{
+  padding:2px 10px;
+  background-color: #acacac52;
+  border: 1px solid grey;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+}
+.Mother_transferHistory_box ul hr{
+  margin: 4px 0;
+  }
+
+.transf_hist_li{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.transf_hist_li p{
+   width: 50%;
+   margin: 0;
+   text-align: left;
+}
+.transf_hist_li span{
+    width: 50%; 
+ }
+
+ /*  */
+ .bi-arrow-up-right,.minus{
+  color: red;
+ }
+ .bi-arrow-down-right,.plus{
+  color:green;
+ }
+
+ .tansactionfrom,
+ .tansactionto{
+color: #ffa600;
+ }

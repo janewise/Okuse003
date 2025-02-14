@@ -1,0 +1,121 @@
+.transferForm{
+  display: flex;
+  margin-top: 1rem;
+  align-items: center;
+  flex-direction: column;
+}
+
+/*  */
+.transfer_from_to{
+    display: flex;
+    flex-direction: column;
+    background-color: #acacac52;
+    align-items: center;
+    width: 310px;
+    padding: 10px 15px;
+    height: 130px;
+    border-radius: 10px;
+    justify-content: space-around;
+}
+
+.transfer_from_to div{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.transfer_from_to p{
+    padding: 0;
+    margin: 0;
+    width: 45px;
+    color: rgb(135, 135, 135);
+}
+
+.transfer_from_to h5,
+.receiverId{
+    width: 250px;
+    text-align: center;
+    font-size: 14px;
+}
+
+.transfer_from_to h5,
+.tokenbalance h4{
+   color: rgba(0, 0, 0, 0.6);
+   margin: 0;
+}
+.receiverId {
+    line-height: 30px;
+    background-color:#c8c8c830 ;
+    color: #ffa600;
+    border: none;
+}
+
+.receiverId:focus {
+    outline: none; 
+}
+/*  */
+.tokenbalance{
+width: 310px;
+margin-top: 1.2rem;
+}
+.tokenbalance span{
+   font-size: 17px;
+   color: rgb(135, 135, 135);
+}
+.tokenbalance div{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #acacac52;
+    padding: 10px 15px;
+    border-radius: 10px;
+ }
+
+ .tokenbalance p{
+width:50px ;
+margin: 0;
+color: rgb(135, 135, 135);
+ }
+ .tokenbalance h4{
+    color: #ffa600;
+    margin: 0;
+    width: 150px;
+    font-size: 18px;
+ }
+
+ .sendOkuse{
+  outline: none;
+  border: none;
+    background-color:#96969600 ;
+    color: var(--offcanvas-links-text);
+    width: 225px;
+    text-align: center;
+ }
+ .exin2{
+    border: none;
+    background-color: transparent;
+    color: #ffa600;
+ }
+
+ .transferbutton{
+    position: absolute;
+    bottom: 10%;
+    background-color: #ffa600;
+    font-size: 20px;
+    border-radius: 10px;
+    padding: 7px 0;
+    border: none;
+    width: 300px;
+    color: var(--offcanvas-links-text);
+ }
+
+ /*  */
+ .error-message{
+    color: red;
+ }
+ .Confrim_transfer{
+    color: #ffa600;
+    font-size: 15px;
+ }

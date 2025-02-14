@@ -1,0 +1,182 @@
+
+
+type Hard_quizQ  = {
+  id: number;
+  Question: string;
+  choice: string[]; // Array of strings for choices
+  answer: string;   // Fixed typo
+  backcard: string; // Added to all objects
+  frontcard: string; // Added to all objects
+  };
+
+  export const Hard_quizQ: Hard_quizQ[] = [
+    {
+      id: 1,
+      Question: "Q1.What is the name of the fourth Hokage?",
+      choice: ["Minato", "Kakashi", "Naruto", "Tobirama"],
+      answer: "Minato",
+      backcard: "/Game/Quiz/quiz_img/quizcard_back.png",
+      frontcard:"/Game/Quiz/quiz_img/quizcard_back.png",
+    },
+    {
+      id: 2,
+      Question: "Q2.What is the family name of Naruto?",
+      choice: ["Uzumaki", "Senju", "Sarada", "Hyuga"],
+      answer: "Uzumaki",
+      backcard: "/Game/Quiz/quiz_img/quizcard_back.png",
+      frontcard:"/Game/Quiz/quiz_img/quizcard_back.png",
+    },
+    {
+      id: 3,
+      Question: "Q3.Who is referred to as useless?",
+      choice: ["Ino", "Sasuke", "Sakura", "Kiba"],
+      answer: "Sakura",
+      backcard: "/Game/Quiz/quiz_img/quizcard_back.png",
+      frontcard:"/Game/Quiz/quiz_img/quizcard_back.png",
+    },
+    {
+      id: 4,
+      Question: "Q4.What is the name of the fourth Hokage?",
+      choice: ["Minato", "Kakashi", "Naruto", "Tobirama"],
+      answer: "Minato",
+      backcard: "/Game/Quiz/quiz_img/quizcard_back.png",
+      frontcard:"/Game/Quiz/quiz_img/quizcard_back.png",
+    },
+    {
+      id: 5,
+      Question: "Q5.What is the family name of Hinata?",
+      choice: ["1Uzumaki", "Senju", "Sarada", "Hyuga"],
+      answer: "Hyuga",
+      backcard: "/Game/Quiz/quiz_img/quizcard_back.png",
+      frontcard:"/Game/Quiz/quiz_img/quizcard_back.png",
+    },
+    {
+      id: 6,
+      Question: "Q6.Who has the most Sharigan?",
+      choice: ["Madara", "Naruto", "Itachi", "Danzo"],
+      answer: "Danzo",
+      backcard: "/Game/Quiz/quiz_img/quizcard_back.png",
+      frontcard:"/Game/Quiz/quiz_img/quizcard_back.png",
+    },
+    {
+      id: 7,
+      Question: "Q7.What is the name of the 6th Hokage?",
+      choice: ["Minato", "Kakashi", "Naruto", "Tobirama"],
+      answer: "Kakashi",
+      backcard: "/Game/Quiz/quiz_img/quizcard_back.png",
+      frontcard:"/Game/Quiz/quiz_img/quizcard_back.png",
+    },
+    {
+      id: 8,
+      Question: "Q8.Who kill the most Uchiha in Peace time?",
+      choice: ["Itachi", "Tobiyama", "Mike", "Orochimaru"],
+      answer: "Itachi",
+      backcard: "/Game/Quiz/quiz_img/quizcard_back.png",
+      frontcard:"/Game/Quiz/quiz_img/quizcard_back.png",
+    },
+    {
+      id: 9,
+      Question: "Q9.Who is high way in Naruto?",
+      choice: ["Ino", "Konan", "Pain", "Sakura"],
+      answer: "Sakura",
+      backcard: "/Game/Quiz/quiz_img/quizcard_back.png",
+      frontcard:"/Game/Quiz/quiz_img/quizcard_back.png",
+    },
+    {
+      id: 10,
+      Question: "Q10.In Land of Wind which village exist?",
+      choice: ["Stone", "Mist", "Leaf", "Sand"],
+      answer: "Sand",
+      backcard: "/Game/Quiz/quiz_img/quizcard_back.png",
+      frontcard:"/Game/Quiz/quiz_img/quizcard_back.png",
+    },
+    {
+      id:11,
+      Question: "11.how many tails Kuruma have?",
+      choice: ["8", "9", "1", "2"],
+      answer: "9",
+      backcard: "/Game/Quiz/quiz_img/quizcard_back.png",
+      frontcard:"/Game/Quiz/quiz_img/quizcard_back.png",
+    },
+    {
+      id: 12,
+      Question: "Q12.Who is thr creator of Naruto?",
+      choice: ["Kushimito", "Kushimoto", "Kishimito", "Kishimoto"],
+      answer: "Kishimoto",
+      backcard: "/Game/Quiz/quiz_img/quizcard_back.png",
+      frontcard:"/Game/Quiz/quiz_img/quizcard_back.png",
+    },
+    {
+      id: 13,
+      Question: "Q13.Nara clan use _?",
+      choice: ["MindControl", "Shadow", "Bugs", "Scroll"],
+      answer: "Shadow",
+      backcard: "/Game/Quiz/quiz_img/quizcard_back.png",
+      frontcard:"/Game/Quiz/quiz_img/quizcard_back.png",
+    },
+    {
+      id: 14,
+      Question: "Q14.What is the name of 7Ninja SwordsMan Naruto first meet?",
+      choice: ["Kabutowa", "Kisame", "Zabuza", "Raiga"],
+      answer: "Raiga",
+      backcard: "/Game/Quiz/quiz_img/quizcard_back.png",
+      frontcard:"/Game/Quiz/quiz_img/quizcard_back.png",
+    },
+    {
+      id: 15,
+      Question: "15.how many tails Shukaku have?",
+      choice: ["1", "2", "3", "4"],
+      answer: "1",
+      backcard: "/Game/Quiz/quiz_img/quizcard_back.png",
+      frontcard:"/Game/Quiz/quiz_img/quizcard_back.png",
+    },
+    {
+      id: 16,
+      Question: "Q16.What Tails Beast 'Yugito Nii' host?",
+      choice: ["Matatabi", "Isobu", "Son Gokū", "Kokuō"],
+      answer: "Matatabi",
+      backcard: "/Game/Quiz/quiz_img/quizcard_back.png",
+      frontcard:"/Game/Quiz/quiz_img/quizcard_back.png",
+    },
+    {
+      id: 17,
+      Question: "Q17.Which Tails beast have wings?",
+      choice: ["Chōmei", "Saiken", "Gyūki", "Shukaku"],
+      answer: "Chōmei",
+      backcard: "/Game/Quiz/quiz_img/quizcard_back.png",
+      frontcard:"/Game/Quiz/quiz_img/quizcard_back.png",
+    },
+    {
+      id: 18,
+      Question: "Q18. Cloud Village is located in Land of _?",
+      choice: ["Lighting", "Mist", "Rock", "Leaf"],
+      answer: "Lighting",
+      backcard: "/Game/Quiz/quiz_img/quizcard_back.png",
+      frontcard:"/Game/Quiz/quiz_img/quizcard_back.png",
+    },
+    {
+      id: 19,
+      Question: "Q19.How many Basic Natural Chakara are there?",
+      choice: ["5", "7", "3", "4"],
+      answer: "5",
+      backcard: "/Game/Quiz/quiz_img/quizcard_back.png",
+      frontcard:"/Game/Quiz/quiz_img/quizcard_back.png",
+    },
+    {
+      id: 20,
+      Question: "Q20.Which clan use Incest as a weapon?",
+      choice: ["Yamanaka", "Akimichi", "Fuma", "Aburame"],
+      answer: "Aburame",
+      backcard: "/Game/Quiz/quiz_img/quizcard_back.png",
+      frontcard:"/Game/Quiz/quiz_img/quizcard_back.png",
+    },
+    {
+      id: 21,
+      Question: "Q21.Who is the first host of Kuruma?",
+      choice: [" Kushina", "Mito", "Madara", "Kagura"],
+      answer: "Mito",
+      backcard: "/Game/Quiz/quiz_img/quizcard_back.png",
+      frontcard:"/Game/Quiz/quiz_img/quizcard_back.png",
+    },
+  ];
+  

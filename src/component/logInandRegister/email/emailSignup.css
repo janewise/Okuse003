@@ -1,0 +1,104 @@
+
+
+.Up-form-group input[type="password"],
+.Up-form-group input[type="text"],
+.Up-form-group input[type="email"]{
+  border: none;
+  border-bottom: 2px solid #ccc;
+  background-color: transparent;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+.Up-form-group input[type="password"]::-webkit-outer-spin-button,
+.Up-form-group input[type="text"]::-webkit-outer-spin-button,
+.Up-form-group input[type="email"]::-webkit-outer-spin-button {
+-webkit-appearance: none;
+margin: 0;
+}
+
+
+.Up-form-group input{
+    color: #FA6C00;
+    width: 80%;
+    padding: 5px 10px;
+    margin-bottom: 1.5rem;
+    font-size: 1.2rem;
+}
+
+      /* Autofill Styles */
+      .Up-form-group input:-webkit-autofill {
+        -webkit-box-shadow: 0 0 0px 1000px transparent inset; /* Ensures background stays transparent */
+        box-shadow: 0 0 0px 1000px transparent inset;
+        -webkit-text-fill-color: #FA6C00; /* Ensures text color stays white */
+        font-size: 1.2rem; /* Matches custom font size */
+        transition: background-color 5000s ease-in-out 0s; /* Prevents sudden style change */
+      }
+      
+      .Up-form-group input:-webkit-autofill:hover,
+      .Up-form-group input:-webkit-autofill:focus {
+        -webkit-box-shadow: 0 0 0px 1000px transparent inset;
+        box-shadow: 0 0 0px 1000px transparent inset;
+        -webkit-text-fill-color: #FA6C00;}
+
+
+.signupbtn{
+  border: 1px solid #FA6C00;
+  margin-bottom: 1.5rem;
+  color: #000000;
+  background-color: #ffffff;
+}
+.signupbtn:hover{
+color: #ffffff;
+background-color: #FA6C00;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgb(54, 54, 54);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+
+.modal-overlay .modal-content h3 {
+  margin-bottom: 10px;
+  color: red;
+}
+
+.modal-overlay .modal-content p {
+  margin-bottom: 20px;
+  color: #ccc;
+}
+
+
+
+/*vertification cancel-btn */
+.cancel-btn{
+  width: 60%;
+}
+
+/* signup cancel */
+.cancel{
+  position:absolute;
+  top: 0%;
+  right: 0%;
+  padding: 5px;
+  border-radius: 0px;
+  color: #FA6C00;
+  border-bottom-left-radius: 10px;
+  border-top-right-radius: 10px;
+  background-color:rgba(43, 43, 43, 0.541);
+}
+.cancel:hover{
+  cursor: pointer;
+  background-color: rgba(149, 149, 149, 0.677);
+}
+
+

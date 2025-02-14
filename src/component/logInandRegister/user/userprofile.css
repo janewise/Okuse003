@@ -1,0 +1,52 @@
+.mainProfile {
+  margin-top: 3rem;
+  }
+
+  .profile-box1 h4 i{
+    font-size: 5rem;
+    border: 2px solid gray;
+    border-radius: 50%;
+    padding: 20px;
+  }
+  
+  .profile-box1 {
+    padding: 20px;
+    border-radius: 8px;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   text-align: center;
+  }
+  
+  .profile-details {
+    margin-top: 20px;
+    color: var(--home-nav-linkicon);
+    font-size: 16px;
+  }
+  
+  .profile-details h3{
+    margin: 0.5rem 0;
+    font-weight: 700;
+    font-size: 24px;
+  }
+  
+  hr{
+    width: 100%;
+  }
+
+  .profile-box2 {
+    padding:0px 20px;
+  }
+
+  .profile-box2 div{
+    text-align: center;
+  }
+
+  .profile-box2 .bi-coin{
+    color: rgb(186, 162,26);
+}
+
+  .profile-box2 .bi-ticket-perforated{
+    color: rgb(244, 0, 122);
+}

@@ -1,0 +1,38 @@
+
+  :root {
+    --bg-color: #ffffff;
+    --text-color: #000000;
+    --home-nav-linkbg:none;
+    --home-nav-linkicon:#fa6c00;
+    --home-nav-linkborder:rgba(142, 142, 142, 0.6);
+    --offcanvas-links-text:#000;
+    --offcavas-open--:#ffffff85;
+    --light-dark-toggle-icon:#fa6c00;
+    --navbar-togglerbg:none;
+    --homesearchbar-icon_text:#fff;
+    --transfer-link-bg:#e3e3e3dd;
+  }
+  
+  /* Variables for dark theme */
+  .dark-theme {
+    --bg-color: #121212;
+    --text-color: #ffffff;
+    --home-nav-linkbg:#ffff;
+    --home-nav-linkicon:#fa6c00;
+    --home-nav-linkborder:#fa6c00;
+    --offcanvas-links-text:#ffffff;
+    --offcavas-open--:#353535b7;
+    --navbar-togglerbg:#fff;
+  --light-dark-toggle-icon:#fff;
+  --homesearchbar-icon_text:#000000;
+  --transfer-link-bg:#212121dd;
+  }
+
+  
+  body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    margin: 0;
+    font-family: Arial, sans-serif;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }

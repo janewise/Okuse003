@@ -1,0 +1,40 @@
+
+
+.Transfer_back_box{
+    display: flex;
+    padding:5px 15px 30px 15px;
+    align-items: center;
+    justify-content: space-between;
+}
+.Transfer_backspace{
+    color: var(--offcanvas-links-text);
+    font: 700;
+    font-size:30px;
+}.Transfer_back_box span{
+    font-size:18px;
+}
+
+
+/*  */
+.Transfer_Nav ul{
+    list-style: none;
+    display: flex;
+    width: 100%;
+    padding: 0;
+    justify-content: space-around;
+    }
+
+
+.Transfer_Nav ul li{
+border: 2px solid grey;
+padding: 15px 0;
+text-align: center;
+}
+
+.Transfer_link{
+    text-decoration: none;
+    width: 50%;
+    color: var( --offcanvas-links-text);
+}
+
+

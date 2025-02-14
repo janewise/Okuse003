@@ -1,0 +1,91 @@
+.react-tel-input .selected-flag.open:before {
+box-shadow: none !important;
+border-color: transparent !important;
+}
+
+.react-tel-input .form-control{
+    background-color: transparent !important;
+    border: 2px solid #ffffff;
+    color:#fa6c00 !important;
+    font-size: 18px;
+    padding: 13.5px 14px 13.5px 60px;
+}
+
+.react-tel-input .form-control:hover,
+.react-tel-input .form-control:focus{
+background-color: transparent;
+box-shadow: none !important;
+border: 2px solid #fa6c00;
+}
+
+.phonenum_inputbox{
+   display: flex;
+   justify-content: center;
+  align-items: center;
+}
+
+.react-tel-input{
+    width: auto;
+}
+
+/* -- -- down is for username and password */
+.phUp-form-group input[type="password"],
+.phUp-form-group input[type="text"],
+.phUp-form-group input[type="email"]{
+  border: none;
+  border-bottom: 2px solid #ccc;
+  background-color: transparent;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+.phUp-form-group input[type="password"]::-webkit-outer-spin-button,
+.phUp-form-group input[type="text"]::-webkit-outer-spin-button,
+.phUp-form-group input[type="email"]::-webkit-outer-spin-button {
+-webkit-appearance: none;
+margin: 0;
+}
+
+
+.phUp-form-group input{
+    color: #FA6C00;
+    width: 95%;
+    padding: 5px 10px;
+    margin-bottom: 1.5rem;
+    font-size: 1.2rem;
+}
+
+      /* Autofill Styles */
+      .phUp-form-group input:-webkit-autofill {
+        -webkit-box-shadow: 0 0 0px 1000px transparent inset; /* Ensures background stays transparent */
+        box-shadow: 0 0 0px 1000px transparent inset;
+        -webkit-text-fill-color: #FA6C00; /* Ensures text color stays white */
+        font-size: 1.2rem; /* Matches custom font size */
+        transition: background-color 5000s ease-in-out 0s; /* Prevents sudden style change */
+      }
+      
+      .phUp-form-group input:-webkit-autofill:hover,
+      .phUp-form-group input:-webkit-autofill:focus {
+        -webkit-box-shadow: 0 0 0px 1000px transparent inset;
+        box-shadow: 0 0 0px 1000px transparent inset;
+        -webkit-text-fill-color: #FA6C00;}
+
+
+/* -- -- down is for OTP */
+.optinpt_box{
+    display: flex;
+    flex-direction: column;
+    align-items:center ;
+ }
+
+.optinpt_box div{
+    display: flex !important;
+   width: 280px;
+   justify-content: space-evenly;
+ }
+ 
+ .optinpt_box input{
+width: 2.5rem !important;
+height: 2.5rem;
+ }
+

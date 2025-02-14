@@ -1,0 +1,96 @@
+
+.In-form-group input[type="password"],
+.In-form-group input[type="text"],
+.In-form-group input[type="email"] {
+  border: none;
+  border-bottom: 2px solid #ffffff;
+  background-color: transparent;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+.In-form-group input[type="password"]::-webkit-outer-spin-button,
+.In-form-group input[type="text"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.In-form-group input {
+  color: #FA6C00;
+  width: 80%;
+  padding: 5px 10px;
+  margin-bottom: 1.5rem;
+  font-size: 1.2rem;
+}
+
+/* Autofill Styles */
+.In-form-group input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0px 1000px transparent inset; /* Ensures background stays transparent */
+  box-shadow: 0 0 0px 1000px transparent inset;
+  -webkit-text-fill-color: #FA6C00; /* Ensures text color stays white */
+  font-size: 1.2rem; /* Matches custom font size */
+  transition: background-color 5000s ease-in-out 0s; /* Prevents sudden style change */
+}
+
+.In-form-group input:-webkit-autofill:hover,
+.In-form-group input:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0px 1000px transparent inset;
+  box-shadow: 0 0 0px 1000px transparent inset;
+  -webkit-text-fill-color: #FA6C00;
+}
+
+
+.signinbtn{
+margin-bottom: 1.5rem;
+color: #000000;
+background-color: #ffffff;
+}
+.signinbtn:hover{
+color: #ffffff;
+background-color: #FA6C00;
+}
+
+.reset-password-btn{
+padding: 5px 10px;
+background-color:red;
+border: 1px solid #fff;
+color: #fff;
+font-size: 1.2rem;
+border-radius: 10px;
+}
+
+/*  */
+.cancel{
+position:absolute;
+top: 0%;
+right: 0%;
+padding: 5px;
+border-radius: 0px;
+color: #FA6C00;
+border-bottom-left-radius: 10px;
+border-top-right-radius: 10px;
+background-color:rgba(43, 43, 43, 0.541);
+}
+.cancel:hover{
+cursor: pointer;
+background-color: rgba(149, 149, 149, 0.677);
+}
+
+/*  */
+.show-password {
+padding-left: 15%;
+display: flex;
+margin-bottom: 2rem;
+color: #FA6C00;
+}
+
+.Signupmalar{
+color:#FA6C00;
+}
+
+.Signupmar{
+text-decoration: none;
+color: #000000;
+font-size: 1rem;
+font-weight: 500;
+}

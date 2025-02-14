@@ -1,0 +1,17 @@
+.candyload img{
+    height: 100vh;
+    width: 100%;
+    background-image:url("../candy_img/candyspl.gif");
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.Mother_MatchCandy{
+    height: 100vh;
+    background: url("../candy_img/background.jpg") no-repeat center center fixed;
+    background-size: cover;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    text-align: center;
+}
+

@@ -1,0 +1,101 @@
+
+/*01 BS Nav Modified */
+   .navbar{
+    --bs-navbar-toggler-border-color: none;
+    --bs-navbar-toggler-border-radius:none;
+    --bs-navbar-toggler-focus-width:0;
+    --bs-navbar-toggler-font-size:1.5rem;
+   }
+ 
+  .navbar-toggler-icon{
+    background-color: var( --navbar-togglerbg);
+    border-radius: 5px;
+  }
+/* Homenav-bar modified */
+.homenav-bar{
+    display: flex;
+    flex-direction: row;
+    padding: 0;
+    margin:1rem 0 0 0;
+    align-content: center;
+    justify-content: space-around;
+    min-width:100%;
+}
+
+.homenav-item{
+    list-style: none;
+    text-align: center;
+}
+.homenav-item p{
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.homenav-link{
+    text-decoration: none;
+    color:var(--home-nav-linkicon);
+    font-size:1.4rem;
+     padding: 2px 10px 2px ; 
+     border-radius: 5px;
+     border:2px solid var( --home-nav-linkborder);
+     background-color: var(--home-nav-linkbg);
+   /* // border: 2px solid rgba(142, 142, 142, 0.6); */
+}
+
+.homenav-link:hover{
+   /* border-bottom: 3px solid #FA6C00; */
+   background-color: #FA6C00;
+   color:#000000;
+   border: none;
+}
+
+.linkactive{
+    background-color: #FA6C00;
+    border: none;
+    color: #fff;
+}
+/* offcanvas */
+.offcanvas{
+    max-width: 85%;
+}
+
+/* offcanvas */
+.offcanvas{
+    background:var( --offcavas-open--);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+/* okuseshow */
+.okuseshow{
+    background-color: #FA6C00;
+    padding: 5px 15px;
+    min-width:120px;
+    border-radius: 15px;
+    font-size: 18px;
+    font-weight: 500;
+    margin-right: 1rem;
+    text-align: right;
+}
+
+/* light and dark toggle */
+.theme-toggle-btn{
+background-color: transparent;
+border: none;
+color:var( --light-dark-toggle-icon);
+font-size: 1.5rem;
+}
+
+/* ticketpng */
+.ticketpng{
+    margin-top: 1rem;
+    padding: 0 20px;
+    font-size: 3rem;
+    color: #6c6c6c;
+}
+
+.ticketpng img{
+width: 60px;
+height: auto;
+transform: rotate(55deg);
+}
+

@@ -1,0 +1,44 @@
+.SignUp-main{
+    width: 100%;
+    min-height: 100vh;
+    background-image:url("./regi_img/loginbg.png");
+    background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.signUp-container{
+width:500px;
+padding: 20px;
+background-color: #86868679;
+backdrop-filter: blur(10px);
+-webkit-backdrop-filter: blur(10px);
+display: flex;
+text-align: center;
+justify-content: center;
+flex-direction: column;
+border-radius: 20px;
+}
+
+/*  */
+
+.form-toggle ul{
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  padding: 0 40px 0 40px;
+  margin-bottom: 3rem;
+}
+
+.form-toggle li{
+ color: #fff;
+ width: 40%;
+}
+
+.gp_active{
+  border-bottom: 3px solid #fca600;
+}
