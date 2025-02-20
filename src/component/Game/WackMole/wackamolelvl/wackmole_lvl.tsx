@@ -32,7 +32,7 @@ export default function WackMole_lvl() {
   const [ticketCard, setTicketCard] = useState<number | null>(null);
   const [moles, setMoles] = useState<Mole[]>([]);
   const [score, setScore] = useState<number>(0);
-  const [countdown, setCountdown] = useState<number>(22);
+  const [countdown, setCountdown] = useState<number>(25);
   const [gameOver, setGameOver] = useState<boolean>(false);
    const [errorMessage, setErrorMessage] = useState<string | null>(null);
    const [hereTicket, setHereTicket] = useState(0);
@@ -117,10 +117,10 @@ const wackmolesound = new Audio("/Game/Sound/wackmole.mp3");
             setMoles((prevMoles) => prevMoles.filter((m) => m.id !== moleId));
           }
         }, 180);
-      }, 5000);
+      }, 500);
     };
 
-    const interval = setInterval(spawnMole, 1500);
+    const interval = setInterval(spawnMole, 860);
     return () => clearInterval(interval);
   }, [gameOver]);
 
@@ -239,7 +239,7 @@ const wackmolesound = new Audio("/Game/Sound/wackmole.mp3");
   
         // Reset game state
         setGameOver(false);
-        setCountdown(22); // Reset timer
+        setCountdown(25); // Reset timer
         setScore(0); // Reset score
         setMoles([]); // Clear existing moles
   
