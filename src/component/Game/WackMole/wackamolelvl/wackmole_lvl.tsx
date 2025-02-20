@@ -1,8 +1,4 @@
 
-
-
-
-//00002
 import React, { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import { doc, getDoc,updateDoc } from "firebase/firestore";
@@ -32,12 +28,50 @@ export default function WackMole_lvl() {
   const [ticketCard, setTicketCard] = useState<number | null>(null);
   const [moles, setMoles] = useState<Mole[]>([]);
   const [score, setScore] = useState<number>(0);
-  const [countdown, setCountdown] = useState<number>(25);
-  const [gameOver, setGameOver] = useState<boolean>(false);
+  const [countdown, setCountdown] = useState<number>(20);
    const [errorMessage, setErrorMessage] = useState<string | null>(null);
    const [hereTicket, setHereTicket] = useState(0);
 const [hereCoin, setHereCoin] = useState(0);
 const wackmolesound = new Audio("/Game/Sound/wackmole.mp3");
+
+// const [gameOver, setGameOver] = useState(() => {
+//   const savedGameOver = localStorage.getItem("gameOver");
+//   const savedhereTicket = localStorage.getItem("hereTicket");
+//   const savedhereCoin = localStorage.getItem("hereCoin");
+//   const savedscore = localStorage.getItem("score");
+//   const savedcountdown = localStorage.getItem("countdown");
+//   return savedGameOver ? JSON.parse(savedGameOver) : false;
+// });
+
+// useEffect(() => {
+//   localStorage.setItem("gameOver", JSON.stringify(gameOver));
+//   localStorage.setItem("hereTicket",JSON.stringify(hereTicket));
+//   localStorage.setItem("hereCoin",JSON.stringify(hereCoin));
+//   localStorage.setItem("score",JSON.stringify(score));
+//   localStorage.setItem("countdown",JSON.stringify(countdown));
+// }, [gameOver]);
+
+// useEffect(() => {
+//   const storedGameOver = localStorage.getItem("gameOver");
+//   if (storedGameOver) {
+//     setGameOver(JSON.parse(storedGameOver));
+//   }
+// }, []);
+const [gameOver, setGameOver] = useState(() => {
+  const savedGameOver = localStorage.getItem("gameOver");
+  return savedGameOver ? JSON.parse(savedGameOver) : false;
+});
+
+useEffect(() => {
+  localStorage.setItem("gameOver", JSON.stringify(gameOver));
+}, [gameOver]);
+
+useEffect(() => {
+  const storedGameOver = localStorage.getItem("gameOver");
+  if (storedGameOver) {
+    setGameOver(JSON.parse(storedGameOver));
+  }
+}, []);
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, async (user) => {
@@ -83,6 +117,11 @@ const wackmolesound = new Audio("/Game/Sound/wackmole.mp3");
   }, [countdown]);
 
   useEffect(() => {
+    localStorage.setItem("gameOver", JSON.stringify(gameOver));
+  }, [gameOver, okuseCoin]);
+  
+
+  useEffect(() => {
     if (gameOver) return;
 
     const spawnMole = () => {
@@ -117,13 +156,22 @@ const wackmolesound = new Audio("/Game/Sound/wackmole.mp3");
             setMoles((prevMoles) => prevMoles.filter((m) => m.id !== moleId));
           }
         }, 180);
-      }, 500);
+      }, 600);
     };
 
-    const interval = setInterval(spawnMole, 860);
+    const interval = setInterval(spawnMole, 1000);
     return () => clearInterval(interval);
   }, [gameOver]);
 
+  useEffect(() => {
+    const storedGameOver = localStorage.getItem("gameOver");
+    const storedOkuseCoin = localStorage.getItem("okuseCoin");
+  
+    if (storedGameOver !== null) {
+      setGameOver(JSON.parse(storedGameOver));
+    }
+  }, []);
+  
   // const whackMole = (index: number) => {
   //   setMoles((prevMoles) =>
   //     prevMoles.map((mole) => {
@@ -239,7 +287,7 @@ const wackmolesound = new Audio("/Game/Sound/wackmole.mp3");
   
         // Reset game state
         setGameOver(false);
-        setCountdown(25); // Reset timer
+        setCountdown(20); // Reset timer
         setScore(0); // Reset score
         setMoles([]); // Clear existing moles
   
@@ -321,6 +369,345 @@ const wackmolesound = new Audio("/Game/Sound/wackmole.mp3");
     </div>
   );
 }
+
+
+
+
+
+
+//00002
+// import React, { useState, useEffect } from "react";
+// import { NavLink } from "react-router-dom";
+// import { doc, getDoc,updateDoc } from "firebase/firestore";
+// import { auth, db } from "../../../../firebase/firebase";
+// import { onAuthStateChanged } from "firebase/auth";
+// import wackbg2 from "../wackamole_img/wack_mole_bg2.png";
+// import moleSprite from "../wackamole_img/wackmole_sprites.png";
+// import wackbg from "../wackamole_img/whack-a-mole.jpeg";
+// import leftwoodarr from "../wackamole_img/leftarrowwood.png";
+// import wackreplay from "../wackamole_img/woodreplay.png"
+
+// import "./wackmole_lvl.css";
+
+// const NUM_HOLES = 9;
+
+// interface Mole {
+//   id: number;
+//   position: number | null;
+//   frame: number;
+//   isHit: boolean;
+// }
+
+// export default function WackMole_lvl() {
+//   const [isLoading, setIsLoading] = useState<boolean>(true);
+//   const [okuseCoin, setOkuseCoin] = useState<number | null>(null);
+//   const [isOnline, setIsOnline] = useState(false);
+//   const [ticketCard, setTicketCard] = useState<number | null>(null);
+//   const [moles, setMoles] = useState<Mole[]>([]);
+//   const [score, setScore] = useState<number>(0);
+//   const [countdown, setCountdown] = useState<number>(25);
+//   const [gameOver, setGameOver] = useState<boolean>(false);
+//    const [errorMessage, setErrorMessage] = useState<string | null>(null);
+//    const [hereTicket, setHereTicket] = useState(0);
+// const [hereCoin, setHereCoin] = useState(0);
+// const wackmolesound = new Audio("/Game/Sound/wackmole.mp3");
+
+//   useEffect(() => {
+//     const unsubscribe = onAuthStateChanged(auth, async (user) => {
+//       if (user) {
+//         setIsOnline(true);
+//         try {
+//           const userRef = doc(db, "users", user.uid);
+//           const snapshot = await getDoc(userRef);
+//           if (snapshot.exists()) {
+//             const userData = snapshot.data();
+//             setOkuseCoin(userData.Okuse);
+//             setTicketCard(userData.Ticket);
+//           } else {
+//             console.error("No data available for this user.");
+//           }
+//         } catch (error) {
+//           console.error("Error fetching user data:", error);
+//         }
+//       } else {
+//         setIsOnline(false);
+//       }
+//     });
+
+//     return () => unsubscribe();
+//   }, []);
+
+//   useEffect(() => {
+//     const timer = setTimeout(() => {
+//       setIsLoading(false);
+//     }, 2000);
+//     return () => clearTimeout(timer);
+//   }, []);
+
+//   useEffect(() => {
+//     if (countdown > 0) {
+//       const timerInterval = setInterval(() => {
+//         setCountdown((prev) => prev - 1);
+//       }, 1000);
+//       return () => clearInterval(timerInterval);
+//     } else {
+//       setGameOver(true); // Game over when timer reaches 0
+//     }
+//   }, [countdown]);
+
+//   useEffect(() => {
+//     localStorage.setItem("gameOver", JSON.stringify(gameOver));
+//   }, [gameOver, okuseCoin]);
+  
+
+//   useEffect(() => {
+//     if (gameOver) return;
+
+//     const spawnMole = () => {
+//       const newPosition = Math.floor(Math.random() * NUM_HOLES);
+//       const moleId = Date.now();
+//       setMoles((prevMoles) => [
+//         ...prevMoles,
+//         { id: moleId, position: newPosition, frame: 1, isHit: false },
+//       ]);
+
+//       let frameIndex = 1;
+//       const appearInterval = setInterval(() => {
+//         setMoles((prevMoles) =>
+//           prevMoles.map((mole) =>
+//             mole.id === moleId && frameIndex < 5 ? { ...mole, frame: frameIndex++ } : mole
+//           )
+//         );
+//         if (frameIndex === 5) clearInterval(appearInterval);
+//       }, 180);
+
+//       setTimeout(() => {
+//         let disappearIndex = 4;
+//         const disappearInterval = setInterval(() => {
+//           setMoles((prevMoles) =>
+//             prevMoles.map((mole) =>
+//               mole.id === moleId && disappearIndex > 1 ? { ...mole, frame: mole.frame - 1 } : mole
+//             )
+//           );
+//           disappearIndex--;
+//           if (disappearIndex === 1) {
+//             clearInterval(disappearInterval);
+//             setMoles((prevMoles) => prevMoles.filter((m) => m.id !== moleId));
+//           }
+//         }, 180);
+//       }, 800);
+//     };
+
+//     const interval = setInterval(spawnMole, 1100);
+//     return () => clearInterval(interval);
+//   }, [gameOver]);
+
+//   useEffect(() => {
+//     const storedGameOver = localStorage.getItem("gameOver");
+//     const storedOkuseCoin = localStorage.getItem("okuseCoin");
+  
+//     if (storedGameOver !== null) {
+//       setGameOver(JSON.parse(storedGameOver));
+//     }
+//   }, []);
+  
+//   // const whackMole = (index: number) => {
+//   //   setMoles((prevMoles) =>
+//   //     prevMoles.map((mole) => {
+//   //       if (mole.position === index && !mole.isHit) {
+//   //         setScore((prevScore) => prevScore + 1);
+//   //         wackmolesound.play().catch((err) => {
+//   //           console.error("Failed to play wackmolesound:", err);
+//   //         });
+//   //         mole.isHit = true;
+
+//   //         let hitFrames = [43, 44, 45];
+//   //         let hitIndex = 0;
+
+//   //         const hitInterval = setInterval(() => {
+//   //           if (hitIndex < hitFrames.length) {
+//   //             setMoles((prevMoles) =>
+//   //               prevMoles.map((m) =>
+//   //                 m.id === mole.id ? { ...m, frame: hitFrames[hitIndex++] } : m
+//   //               )
+//   //             );
+//   //           } else {
+//   //             clearInterval(hitInterval);
+
+//   //             let dizzyFrames = [37, 38, 39, 38, 37];
+//   //             let dizzyIndex = 0;
+
+//   //             const dizzyInterval = setInterval(() => {
+//   //               if (dizzyIndex < dizzyFrames.length) {
+//   //                 setMoles((prevMoles) =>
+//   //                   prevMoles.map((m) =>
+//   //                     m.id === mole.id ? { ...m, frame: dizzyFrames[dizzyIndex++] } : m
+//   //                   )
+//   //                 );
+//   //               } else {
+//   //                 clearInterval(dizzyInterval);
+//   //                 setTimeout(() => {
+//   //                   setMoles((prevMoles) => prevMoles.filter((m) => m.id !== mole.id));
+//   //                 }, 100);
+//   //               }
+//   //             }, 160);
+//   //           }
+//   //         }, 170);
+//   //       }
+//   //       return mole;
+//   //     })
+//   //   );
+//   // };
+
+//   const whackMole = (index: number) => {
+//     setMoles((prevMoles) =>
+//       prevMoles.map((mole) => {
+//         if (mole.position === index && !mole.isHit) {
+//           setScore((prevScore) => prevScore + 1);
+//           wackmolesound.play().catch((err) => {
+//             console.error("Failed to play wackmolesound:", err);
+//           });
+  
+//           // Mark the mole as hit to prevent further hits
+//           mole.isHit = true;
+  
+//           // Set the mole's position to null
+//           setMoles((prevMoles) =>
+//             prevMoles.map((m) => (m.id === mole.id ? { ...m, position: null } : m))
+//           );
+  
+//           // Delay before removing the mole
+//           setTimeout(() => {
+//             setMoles((prevMoles) => prevMoles.filter((m) => m.id !== mole.id));
+//           }, 100); // Adjust the timing as necessary
+//         }
+//         return mole; // Return the original mole for others
+//       })
+//     );
+//   };
+  
+  
+//   useEffect(() => {
+//     if (gameOver) {
+//       let earnedTickets = Math.floor(score / 10); // 1 ticket for every 10 points
+//       let earnedCoins = score % 10; // Remaining points become Okuse
+  
+//       setHereTicket(earnedTickets);
+//       setHereCoin(earnedCoins);
+  
+//       if (isOnline && auth.currentUser) {
+//         const userRef = doc(db, "users", auth.currentUser.uid);
+//         updateDoc(userRef, {
+//           Ticket: (ticketCard ?? 0) + earnedTickets,
+//           Okuse: (okuseCoin ?? 0) + earnedCoins,
+//         })
+//         .then(() => {
+//           setTicketCard((prev) => (prev !== null ? prev + earnedTickets : earnedTickets));
+//           setOkuseCoin((prev) => (prev !== null ? prev + earnedCoins : earnedCoins));
+//         })
+//         .catch((error) => {
+//           console.error("Error updating rewards:", error);
+//         });
+//       }
+//     }
+//   }, [gameOver]);
+  
+
+//   const handleReplay = async () => {
+//     if (okuseCoin !== null && okuseCoin >= 20) {
+//       try {
+//         const userRef = doc(db, "users", auth.currentUser!.uid);
+//         await updateDoc(userRef, {
+//           Okuse: okuseCoin - 20,
+//         });
+  
+//         setOkuseCoin((prev) => (prev !== null ? prev - 20 : null));
+//         setErrorMessage(null);
+  
+//         // Reset game state
+//         setGameOver(false);
+//         setCountdown(25); // Reset timer
+//         setScore(0); // Reset score
+//         setMoles([]); // Clear existing moles
+  
+//       } catch (error) {
+//         console.error("Error deducting coins:", error);
+//       }
+//     } else {
+//       setErrorMessage("Insufficient Okuse coins to replay!");
+//     }
+//   };
+  
+
+//   if (isLoading)
+//     return (
+//       <div>
+//         <img src={wackbg} alt="" className="candybg" />
+//       </div>
+//     );
+
+//   return (
+//     <div>
+//       <img src={wackbg2} alt="" className="candybg" />
+//       <div className="wackgamewaiting_box1 container">
+//         <NavLink to="/" className="wackmole_backspace">
+//           <img src={leftwoodarr} alt="" width={"60"} />
+//         </NavLink>
+//         <div className="candyokuseshowDiv">
+//           <span className="wackmoleokuseshow">
+//             <div>
+//               {ticketCard !== null ? ticketCard.toLocaleString() : "0"}{" "}
+//               <i className="bi bi-ticket-perforated"></i>
+//             </div>
+//           </span>
+//           <span className="wackmoleokuseshow">
+//             <div>
+//               {okuseCoin !== null ? okuseCoin.toLocaleString() : "0"}{" "}
+//               <i className="bi bi-coin"></i>
+//             </div>
+//           </span>
+//         </div>
+//       </div>
+
+//       {/* Timer and Score */}
+//       <div className="wacktimerscore">
+//         <div>
+//           <p>Timer: {countdown}s</p>
+//           <p>Score: {score}</p>
+//         </div>
+//       </div>
+
+//       {/* Wack Game */}
+//       {!gameOver ? (
+//         <div className="wackgame-container">
+//           <div className="mole-grid">
+//             {Array.from({ length: NUM_HOLES }).map((_, index) => {
+//               const mole = moles.find((m) => m.position === index);
+//               return (
+//                 <div key={index} className="mole-hole" onClick={() => whackMole(index)}>
+//                   <div
+//                     className="mole"
+//                     style={{
+//                       backgroundImage: `url(${moleSprite})`,
+//                       backgroundPosition: mole ? `-${(mole.frame - 1) * 100}px 0px` : "0px 0px",
+//                     }}
+//                   />
+//                 </div>
+//               );
+//             })}
+//           </div>
+//         </div>
+//       ) : (
+//         <div className="wackgame_replay">
+//           <h2>Rewards</h2>
+//           <p>{hereTicket} Ticket  , {hereCoin} Coins</p>
+//           <div><img src={wackreplay} alt="" width={60} onClick={handleReplay} />
+//           <NavLink to="/wack_a_mole"><img src={wackreplay} alt="" width={60}/></NavLink></div>
+//       </div>      
+//       )}
+//     </div>
+//   );
+// }
 
 
 
