@@ -117,10 +117,10 @@ const wackmolesound = new Audio("/Game/Sound/wackmole.mp3");
             setMoles((prevMoles) => prevMoles.filter((m) => m.id !== moleId));
           }
         }, 180);
-      }, 1000);
+      }, 5000);
     };
 
-    const interval = setInterval(spawnMole, 1100);
+    const interval = setInterval(spawnMole, 1500);
     return () => clearInterval(interval);
   }, [gameOver]);
 
