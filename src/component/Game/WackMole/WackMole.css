@@ -1,0 +1,90 @@
+.WackGameNav{
+display: flex;
+justify-content: space-between;
+align-items: center;
+margin-bottom: 2rem;
+}
+
+.wackmoleokuseshow{
+    color: #ffffff;
+    background-color: #03a8f400;
+   min-width:80px;
+    font-size: 18px;
+    font-weight: 500;
+    margin-right: 0.5rem;
+    text-align: right;
+}
+
+.wackmoleokuseshow div{
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  width: 100%;
+  min-width: 80px;
+  padding: 0 18px 5px;
+  min-height: 60px;
+  height: auto; /* Adjust as needed */
+  background-image: url('./wackamole_img/woodboardsign.png');
+  background-size: cover; /* Ensures the image scales properly */
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.wackmole_backspace{
+color: #3F51B5;
+font-size: 2rem;
+}
+
+
+.candywaiting_description_box {
+    position: relative;
+    width: 100%;
+    max-width: 700px; /* Adjust as per your container size */
+    margin: 0 auto;
+    /* 00 */
+    animation: candyzoomIn 1.6s ease-out forwards;
+    z-index: 10;
+  }
+  
+  .candylevel_image {
+    width: 100%;
+    height: 300px;
+    border-radius: 10px; /* Optional, for rounded corners */
+  }
+  
+
+
+  
+ .wackmole_level_buttons {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10%;
+}
+
+  .candywaiting_enter img {
+    max-height: 100px;
+    height: 100%;
+    width: 150px;
+    border-radius: 10px; 
+    animation: candyzoomIn 1.2s 1.5s ease-out forwards; 
+    z-index: 10;
+    opacity: 0;
+  }
+
+
+@keyframes candyzoomIn {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(0.5);
+    opacity: 0.5;
+  }
+  100% {
+    transform:  scale(1);
+    opacity: 1;
+  }
+} 

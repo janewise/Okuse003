@@ -1,0 +1,213 @@
+/*
+.wackmole-game {
+    text-align: center;
+  }
+  */
+
+  /*  */
+  .wackgamewaiting_box1{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+/*  */
+.wacktimerscore {
+  margin: 2rem 0;
+  position: relative;
+  display: flex;
+  justify-content: center; /* Center content horizontally */
+  align-items: center; /* Center content vertically */
+  color: rgb(31, 28, 28);
+  font-family: "Grechen Fuemen", serif;
+  font-weight: 600;
+font-size: 24px;
+}
+
+.wacktimerscore div {
+  width: 100%;
+  min-width: 200px;
+  max-width: 500px;
+  height: 70px;
+  padding: 5px 18px;
+  
+  background-image: url('../wackamole_img/NoticeBoard.png');
+  background-size: 100% 100%; /* Ensures the image stretches to fit */
+  background-position: center;
+  background-repeat: no-repeat;
+  
+  display: flex;
+  align-items: flex-end;
+  justify-content:space-around; /* Keeps text in the center */
+  text-align: center;
+  flex-direction: row;
+}
+
+  /*  */
+ .wackgame-container {
+    position: relative;
+    width: 300px;
+    margin: auto;
+  }
+  
+    
+  .mole-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    gap: 10px;
+    justify-content: center;
+  }
+  
+  .mole-hole {
+    width: 100px;
+    height: 100px;
+    background-color: rgba(165, 42, 42, 0);
+    border-radius: 50%;
+    position: relative;
+  }
+    .mole {
+        width: 100px;
+        height: 100px;
+        background-size: 600px 800px;
+        position: absolute;
+        bottom: -40px; /* Start hidden below the hole */
+        transition: transform 0.5s ease-in-out, background-position 10ms;
+      }
+      
+      .mole.show {
+        transform: translateY(-40px); /* Move up into the hole */
+      }
+      
+
+
+
+/* for replay wack game */
+.wackgame_replay{
+  animation: wackbounceDown 2s ease-out forwards; 
+  position: absolute;
+  z-index: 10;
+  left: 50%;
+  transform: translateX(-50%);
+
+  width: 100%;
+  min-width: 320px;
+  max-width: 500px;
+  height: 350px;
+  /* padding: 0; */
+  
+  background-image: url('../wackamole_img/woodbaord.png');
+  background-size: 100% 100%; /* Ensures the image stretches to fit */
+  background-position: center;
+  background-repeat: no-repeat;
+
+display: flex;
+flex-direction: column;
+justify-content: space-evenly;
+align-items: center;
+}
+.wackgame_replay div{
+  width: 55%;
+  position: relative;
+  bottom: -7%;
+  display: flex;
+  justify-content: space-around;
+}
+.wackgame_replay h2,.wackgame_replay p{
+  color: rgb(255, 255, 255);
+  font-family: "Grechen Fuemen", serif;
+  font-weight: 700;
+}
+.wackgame_replay h2{
+  font-size: 3rem;
+}
+.wackgame_replay p{
+ font-size: 1.5rem;
+}
+
+/*  */
+@keyframes wackbounceDown {
+  0% {
+    top: -20%;
+    opacity: 0;
+  }
+  15% {
+    top: 15%;
+    opacity: 1;
+  }
+  30% {
+    top: 30%; 
+    opacity: 1;
+  }
+  45% {
+    top: 23%; 
+    opacity: 1;
+  }
+  60% {
+    top: 30%; 
+    opacity: 1;
+  }
+  80% {
+    top: 26%; 
+    opacity: 1;
+  }
+  100% {
+    top: 30%; 
+    opacity: 1;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+      
+
+/* 
+   .wackgamecontainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .game-board {
+    text-align: center;
+  }
+  
+  .mole-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    gap: 10px;
+  }
+  
+  .mole-hole {
+    width: 100px;
+    height: 100px;
+    background: brown;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    cursor: pointer;
+  }
+  
+  .mole {
+    width: 80px;
+    height: 80px;
+    position: absolute;
+    bottom: -20px;
+    transform: scale(0);
+    transition: transform 0.3s;
+  }
+  
+  .mole.show {
+    transform: scale(1);
+  }
+   */

@@ -24,7 +24,7 @@ export const gameData = [
       id: 3,
       name: "Character C",
       image: "/home_img/Game1.png" ,
-      navigate:"/match_card"
+      navigate:"/wack_a_mole"
     },
     {
       id: 4,
