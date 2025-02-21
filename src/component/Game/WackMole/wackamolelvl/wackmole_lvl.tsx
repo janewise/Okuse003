@@ -12,7 +12,7 @@ import wackreplay from "../wackamole_img/woodreplay.png"
 
 import "./wackmole_lvl.css";
 
-const NUM_HOLES = 9;
+const NUM_HOLES = 12;
 
 interface Mole {
   id: number;
@@ -28,7 +28,7 @@ export default function WackMole_lvl() {
   const [ticketCard, setTicketCard] = useState<number | null>(null);
   const [moles, setMoles] = useState<Mole[]>([]);
   const [score, setScore] = useState<number>(0);
-  const [countdown, setCountdown] = useState<number>(20);
+  const [countdown, setCountdown] = useState<number>(22);
    const [errorMessage, setErrorMessage] = useState<string | null>(null);
    const [hereTicket, setHereTicket] = useState(0);
 const [hereCoin, setHereCoin] = useState(0);
@@ -159,7 +159,7 @@ useEffect(() => {
       }, 600);
     };
 
-    const interval = setInterval(spawnMole, 1000);
+    const interval = setInterval(spawnMole, 900);
     return () => clearInterval(interval);
   }, [gameOver]);
 
@@ -311,7 +311,7 @@ useEffect(() => {
     <div>
       <img src={wackbg2} alt="" className="candybg" />
       <div className="wackgamewaiting_box1 container">
-        <NavLink to="/" className="wackmole_backspace">
+        <NavLink to="/wack_a_mole" className="wackmole_backspace"  onClick={() => {localStorage.removeItem("gameOver"); }}>
           <img src={leftwoodarr} alt="" width={"60"} />
         </NavLink>
         <div className="candyokuseshowDiv">
@@ -363,7 +363,8 @@ useEffect(() => {
           <h2>Rewards</h2>
           <p>{hereTicket} Ticket  , {hereCoin} Coins</p>
           <div><img src={wackreplay} alt="" width={60} onClick={handleReplay} />
-          <NavLink to="/wack_a_mole"><img src={wackreplay} alt="" width={60}/></NavLink></div>
+          <NavLink to="/wack_a_mole"  onClick={() => {localStorage.removeItem("gameOver"); }}>
+          <img src={wackreplay} alt="" width={60}/></NavLink></div>
       </div>      
       )}
     </div>
