@@ -24,7 +24,7 @@ const Matchcard = [
     image: "/Game/common/description_panel2.png",
     selector:"/Game/common/hardSelect.png",
     enter:"/Game/common/small_panel.png",
-    insufficent:"/Game/common/insufficentHard.png",
+    insufficent:"/Game/common/insufficentNormal.png",
   },
   {
     id: 3,
