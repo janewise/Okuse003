@@ -11,7 +11,9 @@ const  Quiz_levels = [
     quests:"3",
     reward:  "12 Coins",
     image: "/Game/common/description_panel2.png",
+    selector:"/Game/common/normalSelect.png",
     enter:"/Game/common/small_panel.png",
+    insufficent:"/Game/common/insufficentNormal.png",
   },
   {
     id: 2,
@@ -21,7 +23,9 @@ const  Quiz_levels = [
     quests:"6",
     reward: "20 Coins",
     image: "/Game/common/description_panel2.png",
+    selector:"/Game/common/hardSelect.png",
     enter:"/Game/common/small_panel.png",
+    insufficent:"/Game/common/insufficentHard.png",
   },
   {
     id: 3,
@@ -31,7 +35,9 @@ const  Quiz_levels = [
     quests:"8",
     reward: "1 Ticket",
     image: "/Game/common/description_panel2.png",
+    selector:"/Game/common/hellSelect.png",
     enter:"/Game/common/small_panel.png",
+    insufficent:"/Game/common/insufficentHard.png",
   },
 ];
 

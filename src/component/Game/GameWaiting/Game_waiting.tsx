@@ -14,7 +14,9 @@ interface Level {
   time: string;
   reward: string;
   image: string;
+  selector:string;
   enter: string;
+  insufficent:string;
 }
 
 interface GameWaitingProps {
@@ -118,7 +120,7 @@ export default function GameWaiting({
         </div>
 
         {/* Level description */}
-        <div className="gamewaiting_box2">
+        {/* <div className="gamewaiting_box2">
           <div className="gamewaiting_description_box">
             <img
               src={selectedLevel.image}
@@ -142,29 +144,61 @@ export default function GameWaiting({
               )}
             </div>
           </div>
+        </div> */}
+         <div className="gamewaiting_box2">
+          <div className="gamewaiting_description_box">
+          {canPlay ? (
+            <>
+            <img
+              src={selectedLevel.image}
+              alt={selectedLevel.difficulty}
+              className="level_image"
+            />
+            <div className="gamewaiting_description_overlay">
+                <>
+                  <p>Cost: {selectedLevel.cost} Coins</p>
+                  <p>Quests:{selectedLevel.quests}</p>
+                  <p>Time: {selectedLevel.time}</p>
+                  <p>Reward: {selectedLevel.reward}</p>
+                </>
+            </div>
+            </>
+             ) :(  <img
+              src={selectedLevel.insufficent}
+              alt={selectedLevel.difficulty}
+              className="level_image insufficent"
+            />)   }
+          </div>
         </div>
 
         {/* Level selection buttons */}
         <div className="gamewaiting_level_buttons">
           {levels.map((level) => (
-            <button
+            // <button
+            //   key={level.id}
+            //   className={`level_button ${
+            //     selectedLevel.id === level.id ? "active" : ""
+            //   }`}
+            //   onClick={() => setSelectedLevel(level)}
+            // >
+            //   {level.difficulty}
+            // </button>
+            <img
+              src={level.selector}
+              alt={level.difficulty}
               key={level.id}
-              className={`level_button ${
-                selectedLevel.id === level.id ? "active" : ""
-              }`}
+              className="level_button"
               onClick={() => setSelectedLevel(level)}
-            >
-              {level.difficulty}
-            </button>
+            />
           ))}
 
           {/* Game enter button */}
           <div className="gamewaiting_enter">
             {canPlay ? (
-              <img src={selectedLevel.enter} alt="" onClick={handleEnterLevel} />
+              <img src={selectedLevel.selector} alt="" onClick={handleEnterLevel} />
             ) : (
               <img
-                src={selectedLevel.enter}
+                src={selectedLevel.selector}
                 alt=""
                 style={{ opacity: 0.5, cursor: "not-allowed" }}
               />

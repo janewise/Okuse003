@@ -55,26 +55,21 @@ margin-bottom: 5%;
 }
 
 .level_button {
-  margin: 0.5rem 0.5rem;
-  padding: 0.5rem 1rem;
+  margin: 1rem 0.5rem;
   max-width: 400px;
   width: 100%;
-  background-color: #ffffff;
-  border: 2px solid #ccc;
+  height: 60px;
   border-radius: 5px;
   cursor: pointer;
   transition: all 0.3s ease;
 }
 
-.level_button.active {
+/* .level_button.active {
   background-color: #007bff;
   color: #ffffff;
   border-color: #007bff;
-}
+} */
 
-.level_button:hover {
-  background-color: #ff0000;
-}
 
 /*  */
 .gamewaiting_enter{
@@ -89,4 +84,10 @@ margin-bottom: 5%;
   height: 100%;
   width: 100%;
   border-radius: 10px; 
+}
+
+.insufficent{
+  background-color:#00000080;
+  border: 2px solid #ffffff21;
+  padding: 0.4rem;
 }

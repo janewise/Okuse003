@@ -10,7 +10,9 @@ const Matchcard = [
     quests:"2card-6pairs",
     reward: "25 coins",
     image: "/Game/common/description_panel2.png",
+    selector:"/Game/common/normalSelect.png",
     enter:"/Game/common/small_panel.png",
+    insufficent:"/Game/common/insufficentNormal.png",
   },
   {
     id: 2,
@@ -20,7 +22,9 @@ const Matchcard = [
     quests:"2card-10pairs",
     reward: "50 coins",
     image: "/Game/common/description_panel2.png",
+    selector:"/Game/common/hardSelect.png",
     enter:"/Game/common/small_panel.png",
+    insufficent:"/Game/common/insufficentHard.png",
   },
   {
     id: 3,
@@ -30,7 +34,9 @@ const Matchcard = [
     reward: "4 Tickets",
     quests:"3cards-8pairs",
     image: "/Game/common/description_panel2.png",
+    selector:"/Game/common/hellSelect.png",
     enter:"/Game/common/small_panel.png",
+    insufficent:"/Game/common/insufficentHard.png",
   },
 ];
 
