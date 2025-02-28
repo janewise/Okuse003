@@ -4,7 +4,7 @@ import { Nav } from "./component/Nav/Nav";
 import { AuthProvider } from "./firebase/auth";
 // Pages
 import { Home } from "./component/Home/Home";
-import { Shop } from "./component/Shop/Shop";
+import { Shop } from "./component/Shop/shop";
 import { TopUp } from "./component/TopUp/topup";
 import { WhishList } from "./component/Wishlist/wishlist";
 import { More } from "./component/More/More";
