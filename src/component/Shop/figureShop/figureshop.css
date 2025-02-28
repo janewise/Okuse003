@@ -1,0 +1,27 @@
+
+/*  */
+.figure_card{
+    width: 99% !important;
+    background-color: var(--bg-color);
+    border-color: var(--shop-figure-border);
+    box-shadow:1px 1px 5px var(--shop-figure-border) !important;
+    color: var(--text-color);
+}
+.figure_card img{
+   padding: 5px;
+}
+.figure_card_body{
+   padding:4px 16px 0 ;
+}
+.figure_card_body p{
+  margin-bottom: 5px;
+}
+.figure_btn_box{
+padding-bottom: 10px;
+}
+
+/*  */
+.redeem{
+   background-color: var(--home-nav-linkicon);
+   color: var(--text-color);
+}

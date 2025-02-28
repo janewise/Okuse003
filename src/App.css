@@ -2,6 +2,7 @@
   :root {
     --bg-color: #ffffff;
     --text-color: #000000;
+    --shop-figure-border:rgba(66, 66, 66, 0.3);
     --home-nav-linkbg:none;
     --home-nav-linkicon:#fa6c00;
     --home-nav-linkborder:rgba(142, 142, 142, 0.6);
@@ -26,6 +27,7 @@
   --light-dark-toggle-icon:#fff;
   --homesearchbar-icon_text:#000000;
   --transfer-link-bg:#212121dd;
+  --shop-figure-border:rgba(255, 255, 255, 0.2);
   }
 
   

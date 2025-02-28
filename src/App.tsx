@@ -4,7 +4,7 @@ import { Nav } from "./component/Nav/Nav";
 import { AuthProvider } from "./firebase/auth";
 // Pages
 import { Home } from "./component/Home/Home";
-import { Shop } from "./component/Shop/shop";
+import { Shop } from "./component/Shop/Shop";
 import { TopUp } from "./component/TopUp/topup";
 import { WhishList } from "./component/Wishlist/wishlist";
 import { More } from "./component/More/More";
@@ -39,6 +39,7 @@ const Quizgame = lazy(() => import("./component/Game/quiz_game/quiz_game"));
 function App() {
   const location = useLocation();
   const isAuthPage = ["/signin", "/signup", "/resetpass","/Transfer_Main/transfer","/transfer_history",
+    "/shop",
     "/quiz_game","/quiz_game_level_normal","/quiz_game_level_hard","/quiz_game_level_hell",
     //for match the card
     "/match_card","/match_card_level_normal","/match_card_level_hard","/match_card_level_hell",
