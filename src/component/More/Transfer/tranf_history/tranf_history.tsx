@@ -392,30 +392,57 @@ export default function Transf_History() {
     return () => unsubscribe();
   }, []);
 
-  useEffect(() => {
-    if (!userId) return;
+  // useEffect(() => {
+  //   if (!userId) return;
 
+  //   const fetchTransactions = async () => {
+  //     try {
+  //       const userTransactionRef = collection(db, "users", userId, "Transaction_history");
+
+  //       // Fetch only the latest 10 transactions, ordered by timestamp
+  //       const q = query(userTransactionRef, orderBy("timestamp", "desc"), limit(10));
+  //       const querySnapshot = await getDocs(q);
+
+  //       const history: Transaction[] = querySnapshot.docs.map((doc) => ({
+  //         id: doc.id,
+  //         ...doc.data(),
+  //       })) as Transaction[];
+
+  //       setTransactions(history);
+  //     } catch (error) {
+  //       console.error("Error fetching transaction history:", error);
+  //     }
+  //   };
+
+  //   fetchTransactions();
+  // }, [userId]);
+
+  useEffect(() => {
+    if (!userId) return; // Ensures fetching only happens when userId is available
+  
+    console.log("Fetching transactions for user:", userId); // Debugging log
+  
     const fetchTransactions = async () => {
       try {
         const userTransactionRef = collection(db, "users", userId, "Transaction_history");
-
-        // Fetch only the latest 10 transactions, ordered by timestamp
         const q = query(userTransactionRef, orderBy("timestamp", "desc"), limit(10));
         const querySnapshot = await getDocs(q);
-
+  
         const history: Transaction[] = querySnapshot.docs.map((doc) => ({
           id: doc.id,
           ...doc.data(),
         })) as Transaction[];
-
+  
         setTransactions(history);
       } catch (error) {
         console.error("Error fetching transaction history:", error);
       }
     };
-
+  
     fetchTransactions();
-  }, [userId]);
+  }, [userId]); // Runs when userId changes
+  
+  
 
   const shortenUid = (address: string) => {
     return `${address.slice(0, 5)}...${address.slice(-5)}`;

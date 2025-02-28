@@ -5,8 +5,8 @@ import { AuthProvider } from "./firebase/auth";
 // Pages
 import { Home } from "./component/Home/Home";
 import { Shop } from "./component/Shop/Shop";
-import { TopUp } from "./component/TopUp/topup";
-import { WhishList } from "./component/Wishlist/wishlist";
+import { TopUp } from "./component/TopUp/Topup";
+import { WhishList } from "./component/Wishlist/Wishlist";
 import { More } from "./component/More/More";
 import { Homelink } from "./component/Nav/homelink/homelink";
 // Login and register

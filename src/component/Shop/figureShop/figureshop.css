@@ -25,3 +25,11 @@ padding-bottom: 10px;
    background-color: var(--home-nav-linkicon);
    color: var(--text-color);
 }
+
+.btn-group-sm>.btn, .btn-sm {
+   --bs-btn-padding-y: 0.3rem; 
+    --bs-btn-padding-x: 0.6rem;
+   --bs-btn-font-size: 1rem;
+   font-weight: 600;
+    --bs-btn-border-radius: var(--bs-border-radius-sm); 
+}
