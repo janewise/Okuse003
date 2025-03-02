@@ -30,6 +30,8 @@ import MatchCandylvl from "./component/Game/MatchCandy/matchcandylevel/matchcand
 import Transf_History from "./component/More/Transfer/tranf_history/tranf_history";
 import WackMole from "./component/Game/WackMole/WackMole";
 import WackMole_lvl from "./component/Game/WackMole/wackamolelvl/wackmole_lvl";
+import { Crane } from "./component/Game/CraneGame/CraneGame";
+import { CoinPusher } from "./component/Game/CoinPusherGame/CoinPusher";
 
 // Lazy load Quizgame
 const Quizgame = lazy(() => import("./component/Game/quiz_game/quiz_game"));
@@ -43,12 +45,14 @@ function App() {
     "/quiz_game","/quiz_game_level_normal","/quiz_game_level_hard","/quiz_game_level_hell",
     //for match the card
     "/match_card","/match_card_level_normal","/match_card_level_hard","/match_card_level_hell",
-  "/matchcandy","/matchcandylvl","/wack_a_mole","/wackmole_lvl"].includes(location.pathname);
+  "/matchcandy","/matchcandylvl","/wack_a_mole","/wackmole_lvl","/crane","/coin_pusher",
+].includes(location.pathname);
     const isAuthPagetwo = ["/signin", "/signup", "/resetpass","/profile",
       "/more","/Transfer_Main/transfer","/transfer_history",
       "/quiz_game","/quiz_game_level_normal","/quiz_game_level_hard","/quiz_game_level_hell",
        "/match_card","/match_card_level_normal","/match_card_level_hard","/match_card_level_hell",
-      "/matchcandy","/matchcandylvl","/wack_a_mole","/wackmole_lvl"].includes(location.pathname);
+      "/matchcandy","/matchcandylvl","/wack_a_mole","/wackmole_lvl","/crane","/coin_pusher",
+    ].includes(location.pathname);
 
   const [theme, setTheme] = useState<"light" | "dark">("light");
 
@@ -79,14 +83,21 @@ function App() {
         <Route path="/quiz_game_level_normal" element={<Suspense fallback={<LoadingScreen />}><Quiznormal /></Suspense> }/>
         <Route path="/quiz_game_level_hard" element={<Suspense fallback={<LoadingScreen />}><Quizhard /></Suspense> }/>
         <Route path="/quiz_game_level_hell" element={<Suspense fallback={<LoadingScreen />}><Quizhell /></Suspense> }/>
+        {/*  */}
         <Route path="/match_card/*" element={<Suspense fallback={<LoadingScreen />}><Match_card /></Suspense> }/>
         <Route path="/match_card_level_normal" element={<Suspense fallback={<LoadingScreen />}><N_matchCard /></Suspense> }/>
         <Route path="/match_card_level_hard" element={<Suspense fallback={<LoadingScreen />}><Hard_MatchCard/></Suspense> }/>
         <Route path="/match_card_level_hell" element={<Suspense fallback={<LoadingScreen />}><Hell_MatchCard/></Suspense> }/> 
+       {/* Candy Crush */}
         <Route path="/matchcandy" element={<Suspense fallback={<LoadingScreen />}><MatchCandy/></Suspense> }/>
         <Route path="/matchcandylvl" element={<Suspense fallback={<LoadingScreen />}><MatchCandylvl/></Suspense> }/>
+        {/* Wack a Mole */}
         <Route path="/wack_a_mole" element={<Suspense fallback={<LoadingScreen />}><WackMole/></Suspense> }/>
         <Route path="/wackmole_lvl" element={<Suspense fallback={<LoadingScreen />}><WackMole_lvl/></Suspense> }/>
+        {/* Crane Game */}
+        <Route path="/crane" element={<Suspense fallback={<LoadingScreen />}><Crane /></Suspense> }/>
+      {/* Coin Pusher */}
+      <Route path="/coin_pusher" element={<Suspense fallback={<LoadingScreen />}><CoinPusher /></Suspense> }/>
       </Routes>
     </div>
   );
